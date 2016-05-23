@@ -40,6 +40,46 @@ def extract_names(filename):
   followed by the name-rank strings in alphabetical order.
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
+  final_list = [] # year and ranks, final list to print
+  name_rank = {}  # map each name with its popularity rank
+  input_file = open(filename, 'r') # Open baby1990.html
+
+  
+  
+  for line in input_file:
+    # Fetch year
+    year = re.search(r'Popularity in (\d\d\d\d)', line)
+    if year:
+      print year.group(1)
+      final_list.append(year.group(1))
+
+    # Fetch names and ranks
+    namesAndRanks = re.search(r'<td>(\d+)</td><td>([a-zA-Z]+)</td><td>([a-zA-Z]+)</td>', line)
+    if namesAndRanks:
+      rank = namesAndRanks.group(1)
+      boyName = namesAndRanks.group(2)
+      girlName = namesAndRanks.group(3)
+
+      print "Rank: " + namesAndRanks.group(1), "Boy: " + namesAndRanks.group(2), "Girl: " + namesAndRanks.group(3)
+      # Put boy in dict
+      if boyName not in name_rank:
+        name_rank[boyName] = rank
+      else:
+        print "INFO: Name " + boyName + " already in dict with rank " + name_rank[boyName] + "! Ignoring."
+
+      # Put girl in dict
+      if girlName not in name_rank:
+        name_rank[girlName] = rank
+      else:
+        print "INFO: Name " + girlName + " already in dict with rank " + name_rank[girlName] + "! Ignoring."
+      
+
+
+
+  input_file.close()  # Not strictly required, but good form.
+
+
+
   # +++your code here+++
   return
 
@@ -63,6 +103,8 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
+
+  extract_names('baby1990.html')
   
 if __name__ == '__main__':
   main()
