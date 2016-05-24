@@ -13,7 +13,11 @@
 # The starter code for each function includes a 'return'
 # which is just a placeholder for your code.
 # It's ok if you do not complete all the functions, and there
+<<<<<<< HEAD
 # are some additional functionts to try in string2.py.
+=======
+# are some additional functions to try in string2.py.
+>>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 
 # A. donuts
@@ -25,10 +29,14 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
   # +++your code here+++
+<<<<<<< HEAD
   if count >= 0 and count < 10:
   	return 'Number of donuts: ' + str(count)
   else:
   	return 'Number of donuts: many'
+=======
+  return
+>>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 
 # B. both_ends
@@ -38,10 +46,14 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
   # +++your code here+++
+<<<<<<< HEAD
   if len(s) >= 2:
   	return s[:2] + s[-2:]
   else:
   	return ''
+=======
+  return
+>>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 
 # C. fix_start
@@ -55,7 +67,11 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
   # +++your code here+++
+<<<<<<< HEAD
   return s[0] + s[1:].replace(s[0], '*')
+=======
+  return
+>>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 
 # D. MixUp
@@ -67,9 +83,13 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
   # +++your code here+++
+<<<<<<< HEAD
   newa = b[:2] + a[2:]
   newb = a[:2] + b[2:]
   return newa + ' ' + newb
+=======
+  return
+>>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 
 # Provided simple test() function used in main() to print
