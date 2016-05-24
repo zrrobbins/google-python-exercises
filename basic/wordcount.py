@@ -39,7 +39,6 @@ print_words() and print_top().
 
 import sys
 
-<<<<<<< HEAD
 # This function takes in a filename and then proceeds to open the file,
 # and build a word/count dictionary of the file's contents.
 def build_dict(filename):
@@ -82,15 +81,12 @@ def print_top(filename):
 
   return
 
-=======
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
 
-###
->>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.

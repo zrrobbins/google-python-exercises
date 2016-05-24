@@ -40,10 +40,6 @@ def extract_names(filename):
   followed by the name-rank strings in alphabetical order.
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
-<<<<<<< HEAD
-  # +++your code here+++
-  return
-=======
   final_list = [] # year and ranks, final list to print
   name_rank = {}  # map each name with its popularity rank
   input_file = open(filename, 'r') # Open baby1990.html
@@ -79,7 +75,6 @@ def extract_names(filename):
   input_file.close()
 
   return final_list
->>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
 
 
 def main():
@@ -101,9 +96,6 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
-<<<<<<< HEAD
-=======
-
   if summary:
     for arg in args:
       sumFile = open(arg + '.summary', 'w')
@@ -114,7 +106,6 @@ def main():
     for arg in args:
       for name in extract_names(arg):
         print name
->>>>>>> e948a065c701a62cf668327f4e37e3c555bb06d7
   
 if __name__ == '__main__':
   main()
