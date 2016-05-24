@@ -96,7 +96,6 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
-
   if summary:
     for arg in args:
       sumFile = open(arg + '.summary', 'w')
