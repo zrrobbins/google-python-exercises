@@ -17,7 +17,30 @@ import commands
 
 # +++your code here+++
 # Write functions and modify main() to call them
+# Gets a list of the absolute paths of all files that meet the naming criteria
+def getAbsolutePaths(args):
+  paths = []; # Absolute paths of all the files that meet the '__w__' naming criteria
 
+  # Get all qualifying names
+  for arg in args:
+    filesInDir = os.listdir(arg)
+    for file in filesInDir:
+      fileName = re.search(r'\w*(__\w+__)\w*\.', file)
+      if fileName:
+        absoluteFilePath = os.path.abspath(os.path.join(arg, file))
+        paths.append(absoluteFilePath)
+
+  return paths
+
+# Copy files given to directory todir
+def copyFiles(absolutePaths, todir):
+  if not os.path.exists(todir):
+    os.mkdir(todir)
+
+  for path in absolutePaths:
+      shutil.copy(path, todir)
+
+  return
 
 
 def main():
@@ -50,6 +73,13 @@ def main():
 
   # +++your code here+++
   # Call your functions
+  absolutePaths = getAbsolutePaths(args)
+
+  if todir != '': # Copying files to directory
+    copyFiles(absolutePaths, todir)
+  else: # Simplest case, just print
+    print absolutePaths
+
   
 if __name__ == "__main__":
   main()
