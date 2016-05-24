@@ -42,6 +42,18 @@ def copyFiles(absolutePaths, todir):
 
   return
 
+# Make a zip file of all the files given in absolutePaths
+def makeZipFile(absolutePaths, tozip):
+  cmd = 'zip -j ' + tozip + ' ' + ' '.join(absolutePaths)
+  print 'Command to run: ' + cmd
+  (status, output) = commands.getstatusoutput(cmd)
+  if status: # Error case, print the command's output to stderr and exit
+    sys.stderr.write(output)
+    sys.exit(1)
+
+  print output
+
+  return
 
 def main():
   # This basic command line argument parsing code is provided.
@@ -77,6 +89,8 @@ def main():
 
   if todir != '': # Copying files to directory
     copyFiles(absolutePaths, todir)
+  if tozip != '': # Making a zip file
+    makeZipFile(absolutePaths, tozip)
   else: # Simplest case, just print
     print absolutePaths
 
